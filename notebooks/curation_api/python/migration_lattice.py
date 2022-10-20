@@ -78,7 +78,8 @@ def get_ids_from_bucket(bucket, collection, original_ids):
             [coll_id, data_id, lat_id, version] = bucket_file.split('_')
             if coll_id == collection and data_id in original_ids:  
                 bucket_key = bucket_obj.key    
-                # original_ids.remove(data_id)        
+                original_ids.remove(data_id)        
+            else: print('data collection not there dude')
             
     return bucket_key
 
